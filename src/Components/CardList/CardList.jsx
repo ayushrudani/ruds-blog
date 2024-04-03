@@ -46,7 +46,10 @@ const CardList = ({ page, cat }) => {
         {
           // if the data is loading, show the loading message
           loading ? (
-            <CardListSkeleton />
+            // loop of 5 to show the skeleton
+            Array.from({ length: 5 }).map((_, index) => (
+              <CardListSkeleton key={index} />
+            ))
           ) : (
             // if the data is loaded, show the posts
 

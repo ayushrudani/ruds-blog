@@ -6,6 +6,7 @@ import Image from "next/image";
 import { useSession } from "next-auth/react";
 import Link from "next/link";
 import baseURL from "@/utils/baseURL";
+import CommentSkeleton from "../Skeleton/CommentSkeleton";
 const Comments = ({ postSlug }) => {
   const status = useSession();
   const [data, setData] = useState([]);
@@ -102,30 +103,31 @@ const Comments = ({ postSlug }) => {
         <Link href="/login">Login to write a comment</Link>
       )}
       <div className={styles.comments}>
-        {isLoading ? (
-          <p>Loading...</p>
-        ) : (
-          data?.map((comment) => (
-            <div className={styles.comment} key={comment._id}>
-              <div className={styles.user}>
-                <Image
-                  src={comment.userImage}
-                  alt=""
-                  width={50}
-                  height={50}
-                  className={styles.image}
-                />
-                <div className={styles.userInfo}>
-                  <span className={styles.username}>{comment.username}</span>
-                  <span className={styles.date}>
-                    {comment.createdAt.substring(0, 10)}
-                  </span>
+        {isLoading
+          ? // for loop to create 5 skeleton comments
+            Array.from({ length: 5 }).map((_, index) => (
+              <CommentSkeleton key={index} />
+            ))
+          : data?.map((comment) => (
+              <div className={styles.comment} key={comment._id}>
+                <div className={styles.user}>
+                  <Image
+                    src={comment.userImage}
+                    alt=""
+                    width={50}
+                    height={50}
+                    className={styles.image}
+                  />
+                  <div className={styles.userInfo}>
+                    <span className={styles.username}>{comment.username}</span>
+                    <span className={styles.date}>
+                      {comment.createdAt.substring(0, 10)}
+                    </span>
+                  </div>
                 </div>
+                <p className={styles.desc}>{comment.desc}</p>
               </div>
-              <p className={styles.desc}>{comment.desc}</p>
-            </div>
-          ))
-        )}
+            ))}
       </div>
     </div>
   );

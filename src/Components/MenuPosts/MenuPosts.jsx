@@ -4,6 +4,7 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import styles from "./menuPosts.module.css";
 import baseURL from "@/utils/baseURL";
+import MenuPostsSkeleton from "../Skeleton/MenuPostsSkeleton";
 
 const MenuPosts = ({ withImage }) => {
   const [posts, setPosts] = useState([]);
@@ -58,42 +59,43 @@ const MenuPosts = ({ withImage }) => {
 
   return (
     <div className={styles.items}>
-      {loading ? (
-        <p>loading..</p>
-      ) : (
-        posts.map((post) => (
-          <Link
-            href={`/posts/${post.slug}`}
-            className={styles.item}
-            key={post._id}
-          >
-            {withImage && (
-              <div className={styles.imageContainer}>
-                <Image src={post.img} alt="" fill className={styles.image} />
-              </div>
-            )}
-            <div className={styles.textContainer}>
-              <span
-                className={`${styles.category} ${
-                  styles[post.catSlug.toLowerCase()]
-                }`}
-              >
-                {post.catSlug}
-              </span>
-              <h3 className={styles.postTitle}>
-                {post.title.substring(0, 40) + "..."}
-              </h3>
-              <div className={styles.detail}>
-                <span className={styles.username}>{post.username}</span>
-                <span className={styles.date}>
-                  {" "}
-                  - {post.createdAt.substring(0, 10)}
+      {loading
+        ? // loop of 4 to show the skeleton
+          Array.from({ length: 4 }).map((_, index) => (
+            <MenuPostsSkeleton key={index} withImage={withImage} />
+          ))
+        : posts.map((post) => (
+            <Link
+              href={`/posts/${post.slug}`}
+              className={styles.item}
+              key={post._id}
+            >
+              {withImage && (
+                <div className={styles.imageContainer}>
+                  <Image src={post.img} alt="" fill className={styles.image} />
+                </div>
+              )}
+              <div className={styles.textContainer}>
+                <span
+                  className={`${styles.category} ${
+                    styles[post.catSlug.toLowerCase()]
+                  }`}
+                >
+                  {post.catSlug}
                 </span>
+                <h3 className={styles.postTitle}>
+                  {post.title.substring(0, 40) + "..."}
+                </h3>
+                <div className={styles.detail}>
+                  <span className={styles.username}>{post.username}</span>
+                  <span className={styles.date}>
+                    {" "}
+                    - {post.createdAt.substring(0, 10)}
+                  </span>
+                </div>
               </div>
-            </div>
-          </Link>
-        ))
-      )}
+            </Link>
+          ))}
     </div>
   );
 };

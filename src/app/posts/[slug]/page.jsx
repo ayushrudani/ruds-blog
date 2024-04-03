@@ -6,6 +6,7 @@ import Image from "next/image";
 import Comments from "@/Components/Comments/Comments";
 import baseURL from "@/utils/baseURL";
 import Page_404 from "@/app/[slug]/page";
+import Loader from "@/Components/Loader/Loader";
 const SinglePage = ({ params }) => {
   // get the slug from the searchParams
   const { slug } = params;
@@ -71,7 +72,7 @@ const SinglePage = ({ params }) => {
   }, [slug]);
   return postFound ? (
     loading ? (
-      <p>Loading...</p>
+      <Loader />
     ) : (
       <div className={styles.container}>
         <div className={styles.infoContainer}>

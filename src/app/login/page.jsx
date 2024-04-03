@@ -4,6 +4,7 @@ import Image from "next/image";
 import styles from "./loginPage.module.css";
 import { useRouter } from "next/navigation";
 import { signIn, useSession } from "next-auth/react";
+import Loader from "@/Components/Loader/Loader";
 
 const LoginPage = () => {
   const { status } = useSession();
@@ -11,7 +12,7 @@ const LoginPage = () => {
   const router = useRouter();
 
   if (status === "loading") {
-    return <div className={styles.loading}>Loading...</div>;
+    return <Loader />;
   }
 
   if (status === "authenticated") {

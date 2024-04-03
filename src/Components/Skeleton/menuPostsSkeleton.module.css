@@ -1,0 +1,70 @@
+.items {
+  margin-top: 35px;
+  margin-bottom: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.imageContainer {
+  flex: 1;
+  position: relative;
+}
+
+.image {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  background: linear-gradient(90deg, #eee, #f9f9f9, #eee);
+  background-size: 200%;
+  animation: skeleton 1s infinite reverse;
+  object-fit: cover;
+}
+.category {
+  background: linear-gradient(90deg, #eee, #f9f9f9, #eee);
+  background-size: 200%;
+  animation: skeleton 1s infinite reverse;
+  border-radius: 10px;
+  height: 18px;
+  width: 20%;
+}
+
+.textContainer {
+  flex: 4;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.postTitle {
+  background: linear-gradient(90deg, #eee, #f9f9f9, #eee);
+  background-size: 200%;
+  animation: skeleton 1s infinite reverse;
+  border-radius: 10px;
+  height: 20px;
+  width: 80%;
+}
+
+.detail {
+  background: linear-gradient(90deg, #eee, #f9f9f9, #eee);
+  background-size: 200%;
+  animation: skeleton 1s infinite reverse;
+  border-radius: 10px;
+  height: 13px;
+  width: 50%;
+}
+
+@keyframes skeleton {
+  0% {
+    background-position: -100% 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}

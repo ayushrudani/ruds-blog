@@ -15,6 +15,7 @@ import { app } from "@/utils/firebase";
 import { toast } from "react-toastify";
 import baseURL from "@/utils/baseURL";
 import dynamic from "next/dynamic";
+import Loader from "@/Components/Loader/Loader";
 
 const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
 const storage = getStorage(app);
@@ -172,7 +173,7 @@ const Write = () => {
   };
 
   if (status.status === "loading") {
-    return <div className={styles.loading}>Loading...</div>;
+    return <Loader />;
   }
 
   if (status.status !== "authenticated") {
