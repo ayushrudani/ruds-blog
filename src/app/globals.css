@@ -3,6 +3,8 @@
   --textColor: black;
   --softBg: #f0f0f0;
   --softTextColor: #626262;
+  --skeleton1: #eee;
+  --skeleton2: #f9f9f9;
 }
 
 * {
@@ -26,6 +28,8 @@ a {
   --textColor: #ddd;
   --softBg: #1f273a;
   --softTextColor: #a6a6a6;
+  --skeleton1: #17223a;
+  --skeleton2: #182034;
 }
 
 .light {
@@ -33,6 +37,8 @@ a {
   --textColor: black;
   --softBg: #f0f0f0;
   --softTextColor: #626262;
+  --skeleton1: #eee;
+  --skeleton2: #f9f9f9;
 }
 .container {
   min-height: 100vh;

@@ -10,7 +10,12 @@
   height: 350px;
   position: relative;
   content: "";
-  background: linear-gradient(90deg, #eee, #f9f9f9, #eee);
+  background: linear-gradient(
+    90deg,
+    var(--skeleton1),
+    var(--skeleton2),
+    var(--skeleton1)
+  );
   background-size: 200%;
   animation: skeleton 1s infinite reverse;
 }
@@ -26,7 +31,12 @@
   width: 50%;
   border-radius: 20px;
   content: "";
-  background: linear-gradient(90deg, #eee, #f9f9f9, #eee);
+  background: linear-gradient(
+    90deg,
+    var(--skeleton1),
+    var(--skeleton2),
+    var(--skeleton1)
+  );
   background-size: 200%;
   animation: skeleton 1s infinite reverse;
   margin-bottom: 30px;
@@ -43,7 +53,12 @@
   width: 90%;
   border-radius: 20px;
   content: "";
-  background: linear-gradient(90deg, #eee, #f9f9f9, #eee);
+  background: linear-gradient(
+    90deg,
+    var(--skeleton1),
+    var(--skeleton2),
+    var(--skeleton1)
+  );
   background-size: 200%;
   animation: skeleton 1s infinite reverse;
   margin-bottom: 10px;
@@ -61,7 +76,12 @@
   width: 100%;
   border-radius: 20px;
   content: "";
-  background: linear-gradient(90deg, #eee, #f9f9f9, #eee);
+  background: linear-gradient(
+    90deg,
+    var(--skeleton1),
+    var(--skeleton2),
+    var(--skeleton1)
+  );
   background-size: 200%;
   animation: skeleton 1s infinite reverse;
 }
@@ -70,7 +90,12 @@
   width: 30%;
   border-radius: 20px;
   content: "";
-  background: linear-gradient(90deg, #eee, #f9f9f9, #eee);
+  background: linear-gradient(
+    90deg,
+    var(--skeleton1),
+    var(--skeleton2),
+    var(--skeleton1)
+  );
   background-size: 200%;
   animation: skeleton 1s infinite reverse;
 }

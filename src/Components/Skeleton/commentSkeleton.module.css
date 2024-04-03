@@ -18,7 +18,12 @@
   object-fit: cover;
   width: 50px;
   height: 50px;
-  background: linear-gradient(90deg, #eee, #f9f9f9, #eee);
+  background: linear-gradient(
+    90deg,
+    var(--skeleton1),
+    var(--skeleton2),
+    var(--skeleton1)
+  );
   background-size: 200%;
   animation: skeleton 1s infinite reverse;
 }
@@ -33,7 +38,12 @@
   height: 16px;
   width: 150px;
   border-radius: 20px;
-  background: linear-gradient(90deg, #eee, #f9f9f9, #eee);
+  background: linear-gradient(
+    90deg,
+    var(--skeleton1),
+    var(--skeleton2),
+    var(--skeleton1)
+  );
   background-size: 200%;
   animation: skeleton 1s infinite reverse;
 }
@@ -41,7 +51,12 @@
   height: 12px;
   width: 100px;
   border-radius: 20px;
-  background: linear-gradient(90deg, #eee, #f9f9f9, #eee);
+  background: linear-gradient(
+    90deg,
+    var(--skeleton1),
+    var(--skeleton2),
+    var(--skeleton1)
+  );
   background-size: 200%;
   animation: skeleton 1s infinite reverse;
 }
@@ -55,7 +70,12 @@
   height: 14px;
   width: 80%;
   border-radius: 20px;
-  background: linear-gradient(90deg, #eee, #f9f9f9, #eee);
+  background: linear-gradient(
+    90deg,
+    var(--skeleton1),
+    var(--skeleton2),
+    var(--skeleton1)
+  );
   background-size: 200%;
   animation: skeleton 1s infinite reverse;
 }

@@ -21,13 +21,23 @@
   height: 60px;
   width: 60px;
   border-radius: 50%;
-  background: linear-gradient(90deg, #eee, #f9f9f9, #eee);
+  background: linear-gradient(
+    90deg,
+    var(--skeleton1),
+    var(--skeleton2),
+    var(--skeleton1)
+  );
   background-size: 200%;
   animation: skeleton 1s infinite reverse;
   object-fit: cover;
 }
 .category {
-  background: linear-gradient(90deg, #eee, #f9f9f9, #eee);
+  background: linear-gradient(
+    90deg,
+    var(--skeleton1),
+    var(--skeleton2),
+    var(--skeleton1)
+  );
   background-size: 200%;
   animation: skeleton 1s infinite reverse;
   border-radius: 10px;
@@ -43,7 +53,12 @@
 }
 
 .postTitle {
-  background: linear-gradient(90deg, #eee, #f9f9f9, #eee);
+  background: linear-gradient(
+    90deg,
+    var(--skeleton1),
+    var(--skeleton2),
+    var(--skeleton1)
+  );
   background-size: 200%;
   animation: skeleton 1s infinite reverse;
   border-radius: 10px;
@@ -52,7 +67,12 @@
 }
 
 .detail {
-  background: linear-gradient(90deg, #eee, #f9f9f9, #eee);
+  background: linear-gradient(
+    90deg,
+    var(--skeleton1),
+    var(--skeleton2),
+    var(--skeleton1)
+  );
   background-size: 200%;
   animation: skeleton 1s infinite reverse;
   border-radius: 10px;
