@@ -1,0 +1,22 @@
+.menu {
+  background: linear-gradient(
+    90deg,
+    var(--skeleton1),
+    var(--skeleton2),
+    var(--skeleton1)
+  );
+  background-size: 200%;
+  animation: skeleton 1s infinite reverse;
+  border-radius: 10px;
+  height: 30px;
+  width: 80px;
+}
+
+@keyframes skeleton {
+  0% {
+    background-position: -100% 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}

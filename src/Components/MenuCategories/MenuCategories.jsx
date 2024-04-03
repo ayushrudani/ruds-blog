@@ -3,6 +3,8 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import styles from "./menuCategories.module.css";
 import baseURL from "@/utils/baseURL";
+import MenuPostsSkeleton from "../Skeleton/MenuPostsSkeleton";
+import MenuCategoriesSkeleton from "../Skeleton/MenuCategoriesSkeleton";
 
 const MenuCategories = () => {
   const [categories, setCategories] = useState([]);
@@ -28,21 +30,22 @@ const MenuCategories = () => {
 
   return (
     <div className={styles.categoryList}>
-      {loading ? (
-        <div>Loading...</div>
-      ) : (
-        categories.map((category) => (
-          <Link key={category._id} href={`/blog?cat=${category.slug}`}>
-            <p
-              className={`${styles.categoryItem} ${
-                styles[category.title.toLowerCase()]
-              }`}
-            >
-              {category.title}
-            </p>
-          </Link>
-        ))
-      )}
+      {loading
+        ? // for loop 6 times
+          Array.from({ length: 6 }).map((_, i) => (
+            <MenuCategoriesSkeleton key={i} />
+          ))
+        : categories.map((category) => (
+            <Link key={category._id} href={`/blog?cat=${category.slug}`}>
+              <p
+                className={`${styles.categoryItem} ${
+                  styles[category.title.toLowerCase()]
+                }`}
+              >
+                {category.title}
+              </p>
+            </Link>
+          ))}
     </div>
   );
 };
