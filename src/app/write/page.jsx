@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from "react";
 import styles from "./write.module.css";
 import Image from "next/image";
-import ReactQuill from "react-quill";
 import "react-quill/dist/quill.bubble.css";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
@@ -15,7 +14,9 @@ import {
 import { app } from "@/utils/firebase";
 import { toast } from "react-toastify";
 import baseURL from "@/utils/baseURL";
+import dynamic from "next/dynamic";
 
+const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
 const storage = getStorage(app);
 
 const Write = () => {
