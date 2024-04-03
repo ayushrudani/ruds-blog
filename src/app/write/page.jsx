@@ -2,8 +2,8 @@
 import React, { useEffect, useState } from "react";
 import styles from "./write.module.css";
 import Image from "next/image";
-// import ReactQuill from "react-quill";
-// import "react-quill/dist/quill.bubble.css";
+import ReactQuill from "react-quill";
+import "react-quill/dist/quill.bubble.css";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import {
@@ -243,13 +243,13 @@ const Write = () => {
             </div>
           </div>
         )}
-        {/* <ReactQuill
+        <ReactQuill
           className={styles.textArea}
           theme="bubble"
           value={input.desc}
           placeholder="Tell your story..."
           onChange={(value) => setInput({ ...input, desc: value })}
-        /> */}
+        />
       </div>
       <button className={styles.publish} onClick={handleSubmit}>
         Publish
