@@ -1,0 +1,33 @@
+{
+  "name": "starter",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "vercel-build": "prisma generate && prisma migrate deploy && next build"
+  },
+  "dependencies": {
+    "@auth/prisma-adapter": "^1.5.1",
+    "@nextui-org/react": "^2.2.10",
+    "@prisma/client": "^5.11.0",
+    "eslint": "8.48.0",
+    "eslint-config-next": "13.4.19",
+    "firebase": "^10.10.0",
+    "next": "13.4.19",
+    "next-auth": "^4.24.7",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-dotenv": "^0.1.0",
+    "react-quill": "^2.0.0",
+    "react-router-dom": "^6.22.3",
+    "react-toastify": "^10.0.5",
+    "swr": "^2.2.5",
+    "toastify-js": "^1.12.0"
+  },
+  "devDependencies": {
+    "prisma": "^5.11.0"
+  }
+}
