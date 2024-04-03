@@ -33,6 +33,7 @@ const Write = () => {
     fileURL: "",
   });
 
+  // useEffect
   useEffect(() => {
     getCategories();
     const upload = () => {
@@ -99,6 +100,7 @@ const Write = () => {
     file && upload();
   }, [file]);
 
+  // slugify
   const sluggify = (str) =>
     str
       .toLowerCase()
@@ -107,6 +109,7 @@ const Write = () => {
       .replace(/[\s_-]+/g, "-")
       .replace(/^-+|-+$/g, "");
 
+  // error message
   const errorMessage = ({ message }) => {
     toast.error(message, {
       position: "bottom-right",
@@ -125,12 +128,20 @@ const Write = () => {
       errorMessage({ message: "Title is required" });
       return;
     }
+    if (input.title.length < 5 || input.title.length > 100) {
+      errorMessage({ message: "Title must be between 5 and 100 characters" });
+      return;
+    }
     if (input.category === "") {
       errorMessage({ message: "Select Category" });
       return;
     }
     if (input.desc === "") {
       errorMessage({ message: "Description is required" });
+      return;
+    }
+    if (input.desc.length < 250) {
+      errorMessage({ message: "Description must be at least 50 word" });
       return;
     }
     if (input.fileURL === "") {
