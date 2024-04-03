@@ -7,6 +7,7 @@ import ThemeProvider from "@/providers/ThemeProvider";
 import AuthProvider from "@/providers/AuthProvider";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Head from "next/head";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,10 +19,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <head>
-        <link rel="icon" type="image/png" href="/blogIcon.png" />
+      <Head>
+        {/* <link rel="icon" type="image/png" href="/blogIcon.png" /> */}
+        <link rel="icon" href="./blogIcon.png" />
         <title>{metadata.title}</title>
-      </head>
+      </Head>
       <body className={inter.className}>
         <AuthProvider>
           <ThemeContextProvider>
