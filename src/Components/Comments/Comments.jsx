@@ -27,6 +27,7 @@ const Comments = ({ postSlug }) => {
         desc: desc,
         userEmail: status.data?.user?.email,
         postSlug: postSlug,
+        createdAt: new Date(),
       }),
     }).then(() => {
       getComments();
